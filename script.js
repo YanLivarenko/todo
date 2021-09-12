@@ -41,28 +41,4 @@ document.addEventListener('DOMContentLoaded', () => {
             todoInput.value = '';
         }else alert('Вы не можете ввести пустое значение');
     });
-
-
-    // deleteButton.addEventListener('click', () => {
-    //     console.log(deleteButton)
-    // })
-
-    // deleteButton.addEventListener('click', () => {
-    // });
-
-
-    // const addItem = () => {
-    //     const listItem = document.createElement('li');
-    //     listItem.innerHTML = `<span>${todoInput.value}</span>  <button id='#deleteButton'>-</button>`;
-    //     // listItem.textContent = todoInput.value;
-    //     todoList.appendChild(listItem);
-    // };
-
-    // deleteButton.addEventListener('click', () => {
-
-    // });
-
-    // todoButton.addEventListener('click', () => {
-    //     addItem();
-    // });
 });

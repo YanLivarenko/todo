@@ -5,14 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Glory&display=swap" rel="stylesheet">
     <title>TODO</title>
 </head>
 <body>
-    <input type="text" id="todoInput">
-    <button id="todoButton">Добавить</button>
-    <ol id="todoList">
-    </ol>
-
+    <div class="main-block">
+        <div class="todo-block">
+            <div class="todo-header">
+                <input type="text" id="todoInput" placeholder="Введите...">
+                <button id="todoButton">Добавить</button>
+            </div>
+            <div class="todo-list">
+                <ol id="todoList"></ol>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

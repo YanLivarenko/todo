@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(todoInput)
 
     const addItem = () => {
-        let tempObj = {};
+        let tempObj = {
+            value: '',
+        };
         tempObj.value = todoInput.value;
         obj.push(tempObj);
     }

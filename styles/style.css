@@ -23,10 +23,30 @@ body{
     padding-bottom: 10px;
     border-bottom: 4px solid #333;
 }
+.todo-list{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
 #todoList{
     font-family: 'Glory', sans-serif;
     font-size: 20px;
+    padding-left: 0px;
+
 }
+
+#todoList li{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+#todoList li button{
+    border-radius: 50%;
+    border: 1px solid #000000;
+}
+
+
 #todoButton{
     font-family: 'Glory', sans-serif;
     font-size: 20px;
@@ -35,6 +55,7 @@ body{
     border: none;
     border-radius: 20px;
     padding: 10px 15px;
+    cursor: pointer;
 }
 #todoInput{
     padding: 10px 15px;

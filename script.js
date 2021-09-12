@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const todoList = document.querySelector('#todoList');
     const todoButton = document.querySelector('#todoButton');
     const deleteButton = document.querySelector('#deleteButton');
-    const obj = [];
+    let obj = [
+    ];
 
     const play = () => {
         obj.forEach((index) => {
@@ -18,15 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    play();
-    console.log(todoInput)
-
+    // play();
+    if(localStorage.getItem('todo')){
+        obj = JSON.parse(localStorage.getItem('todo'));
+        play();
+    }
     const addItem = () => {
         let tempObj = {
             value: '',
         };
         tempObj.value = todoInput.value;
         obj.push(tempObj);
+        localStorage.setItem('todo', JSON.stringify(obj));
     }
 
     todoButton.addEventListener('click', () => {
@@ -38,11 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }else alert('Вы не можете ввести пустое значение');
     });
 
-    const deleteItem = (object) => {
-        object.forEach((item, index) => {
 
-        })
-    }
+    // deleteButton.addEventListener('click', () => {
+    //     console.log(deleteButton)
+    // })
 
     // deleteButton.addEventListener('click', () => {
     // });

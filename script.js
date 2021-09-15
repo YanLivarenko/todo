@@ -61,17 +61,4 @@ document.addEventListener('DOMContentLoaded', () => {
             deleteItem(obj, index);
         })
     })
-
-    
-    
-
-    // deleteButton.forEach((item, index) => {
-    //     item.addEventListener('click', () => {
-    //         obj = obj.filter((task, taskIn) => { taskIn != index })
-    //         console.log(index);
-    //         console.log(obj);
-    //     }) 
-    // })
-
-
 });

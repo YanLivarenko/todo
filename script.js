@@ -7,59 +7,71 @@ document.addEventListener('DOMContentLoaded', () => {
     const todoInput = document.querySelector('#todoInput');
     const todoList = document.querySelector('#todoList');
     const todoButton = document.querySelector('#todoButton');
-    const deleteButton = document.querySelector('#deleteButton');
-    const obj = [];
-
+    let obj = [
+    ];
+    
     const play = () => {
-        obj.forEach((index) => {
+        todoList.innerHTML = '';
+        obj.forEach((item, index) => {
             let listElement = document.createElement('li');
-            listElement.innerHTML = `<span>${index.value}</span>  <button id='#deleteButton'>-</button>`;
+            listElement.setAttribute('id', `${index}`);
+            listElement.innerHTML = `<span>${item.value}</span>  <button class='deleteButton'>-</button>`;
             todoList.appendChild(listElement);
         });
     };
 
-    play();
-    console.log(todoInput)
-
+    // play();
+    if(localStorage.getItem('todo')){
+        obj = JSON.parse(localStorage.getItem('todo'));
+        play();
+    }
     const addItem = () => {
         let tempObj = {
             value: '',
         };
         tempObj.value = todoInput.value;
         obj.push(tempObj);
+        localStorage.setItem('todo', JSON.stringify(obj));
     }
 
     todoButton.addEventListener('click', () => {
         if(todoInput.value){
             addItem();
-            todoList.innerHTML = '';
+            // todoList.innerHTML = '';
             play();
             todoInput.value = '';
         }else alert('Вы не можете ввести пустое значение');
     });
 
-    const deleteItem = (object) => {
-        object.forEach((item, index) => {
+    
+    
+    const deleteButton = document.querySelectorAll('.deleteButton');
+    console.log(obj);
 
-        })
+    const deleteItem = (object, index) => {
+        let tempArr = object.filter((item, itemIndex) => index != itemIndex)
+        obj = tempArr;
+        console.log(obj);
+        localStorage.setItem('todo', JSON.stringify(obj));
+        play();
     }
 
-    // deleteButton.addEventListener('click', () => {
-    // });
+    deleteButton.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            deleteItem(obj, index);
+        })
+    })
+
+    
+    
+
+    // deleteButton.forEach((item, index) => {
+    //     item.addEventListener('click', () => {
+    //         obj = obj.filter((task, taskIn) => { taskIn != index })
+    //         console.log(index);
+    //         console.log(obj);
+    //     }) 
+    // })
 
 
-    // const addItem = () => {
-    //     const listItem = document.createElement('li');
-    //     listItem.innerHTML = `<span>${todoInput.value}</span>  <button id='#deleteButton'>-</button>`;
-    //     // listItem.textContent = todoInput.value;
-    //     todoList.appendChild(listItem);
-    // };
-
-    // deleteButton.addEventListener('click', () => {
-
-    // });
-
-    // todoButton.addEventListener('click', () => {
-    //     addItem();
-    // });
 });

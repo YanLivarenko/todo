@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-
+    
     const todoInput = document.querySelector('#todoInput');
     const todoList = document.querySelector('#todoList');
     const todoButton = document.querySelector('#todoButton');
@@ -35,6 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
         obj.push(tempObj);
         localStorage.setItem('todo', JSON.stringify(obj));
     }
+
+    todoInput.addEventListener('keydown', (event) => {
+        if(event.code == 'Enter' && todoInput.value){
+            addItem();
+            play();
+            todoInput.value = '';
+        }
+    })
 
     todoButton.addEventListener('click', () => {
         if(todoInput.value){

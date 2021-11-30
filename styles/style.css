@@ -50,7 +50,7 @@ body{
 #todoButton{
     font-family: 'Glory', sans-serif;
     font-size: 20px;
-    background-color: royalblue;
+    background-color: #4169e1;
     color: #fff;
     border: none;
     border-radius: 20px;
@@ -60,8 +60,13 @@ body{
 #todoInput{
     padding: 10px 15px;
     color: #000;
+    border: none;
+    border-radius: 3px;
+    outline: none;
 }
 #todoInput:focus{
-    color: #000000;
-    border: 1px solid #000000
+    -webkit-box-shadow: 0px 5px 10px 10px rgba(65, 105, 225, 0.2);
+    -moz-box-shadow: 0px 5px 10px 10px rgba(65, 105, 225, 0.2);
+    box-shadow: 0px 5px 10px 10px rgba(65, 105, 225, 0.2);
 }
+
